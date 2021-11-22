@@ -33,4 +33,4 @@ void PrintArray(int[] arr)
     }
 }
 
-PrintArray(ConvertToBinary(number));
+PrintArray(ConvertToBinary(number));  
