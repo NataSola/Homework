@@ -25,8 +25,8 @@ int[] FindNumberPosition(int[,] arr, int number)
         {
             if (arr[i, j] == number)
             {
-                position[0] = i;
-                position[1] = j;
+                position[0] = i + 1;
+                position[1] = j + 1;
                 return position;
             }
         }
@@ -55,7 +55,7 @@ void PrintArray(int[,] array)
 void PrintPosition(int[] pos, int num)
 {
     System.Console.WriteLine();
-    if (pos[0] >= 0 && pos[1] >= 0) System.Console.WriteLine($"Число {num} находится в {pos[0] + 1}-й строке, {pos[1] + 1}-м столбце");
+    if (pos[0] > 0 && pos[1] > 0) System.Console.WriteLine($"Число {num} находится в {pos[0]}-й строке, {pos[1]}-м столбце");
     else System.Console.WriteLine($"Число {num} отсутствует в заданном массиве");
     System.Console.WriteLine();
 }
