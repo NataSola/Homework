@@ -19,7 +19,7 @@ int[,] ReplaceEvenToSquare(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (array[i, j] % 2 == 0) array[i, j] *= array[i, j];
+            if (array[i, j] % 2 == 0) array[i, j] = array[i, j] * (-1);
         }
     }
     return array;
