@@ -3,7 +3,7 @@
 Console.Clear();
 System.Console.WriteLine();
 
-int[,] GetTable(int row, int col)
+int[,] GetTable(int row, int col, int min, int max)
 {
     int[,] table = new int[row, col];
     for (int i = 0; i < row; i++)
@@ -33,8 +33,5 @@ int col = new Random().Next(5, 10);
 int min = 1;
 int max = 100;
 
-int[,] matrix = GetTable(row, col);
+int[,] matrix = GetTable(row, col, min, max);
 PrintTable(matrix);
-
-
-
