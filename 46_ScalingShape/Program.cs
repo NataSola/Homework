@@ -2,12 +2,6 @@
 
 // Масштабирование равностороннего четырехугольника. (Левый нижний угол (точка А) остается на месте)
 
-int k = 2;                                                          // коэффициент масштабирования
-int[] pointA = { 1, 1 };                                            // координаты точек
-int[] pointB = { 2, 3 };
-int[] pointC = { 5, 3 };
-int[] pointD = { 4, 1 };
-
 
 int[,] GetNewCords(int[] a, int[] b, int[] c, int[] d, int k)       // пересчитываем координаты (умножаем на коэффициент), кроме координат точки А (левый нижний угол), эта точка не смещается
 {
@@ -29,12 +23,11 @@ int[,] GetNewCords(int[] a, int[] b, int[] c, int[] d, int k)       // пере�
     return coor;
 }
 
-void PrintCords(int[,] arr)
+void PrintCords(int[,] arr, char[] point)
 {
-    char[] pointName = { 'A', 'B', 'C', 'D' };
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-        System.Console.Write($"{pointName[i]} ");
+        System.Console.Write($"{point[i]} ");
         for (int j = 0; j < arr.GetLength(1); j++)
         {
             if (j == 0) System.Console.Write($"({arr[i, j]}, ");
@@ -43,8 +36,15 @@ void PrintCords(int[,] arr)
     }
 }
 
+int k = 2;                                                          // коэффициент масштабирования
+int[] pointA = { 1, 1 };                                            // координаты точек
+int[] pointB = { 2, 3 };
+int[] pointC = { 5, 3 };
+int[] pointD = { 4, 1 };
+char[] pointName = { 'A', 'B', 'C', 'D' };
+
 int[,] newCords = GetNewCords(pointA, pointB, pointC, pointD, k);
-PrintCords(newCords);
+PrintCords(newCords, pointName);
 
 
 
