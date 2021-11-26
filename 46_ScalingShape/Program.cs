@@ -51,7 +51,6 @@ PrintCords(newCords, pointName);
 
 int[] MergeArray(int[] arr1, int[] arr2, int[] arr3, int[] arr4)
 {
-    // int[] unitedArr = new int[arr1.Length + arr2.Length + arr3.Length + arr4.Length]
     int[] u1 = arr1.Concat(arr2).ToArray();
     int[] u2 = u1.Concat(arr3).ToArray();
     int[] unitedArr = u2.Concat(arr4).ToArray();
