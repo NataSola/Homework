@@ -18,7 +18,6 @@ int[,] GetNewCords(int[] a, int[] b, int[] c, int[] d, int k)       // пере�
                 coor[3, j] = (d[ii] - a[ii]) * k + a[ii];
             }
         }
-        System.Console.WriteLine();
     }
     return coor;
 }
@@ -43,11 +42,54 @@ int[] pointC = { 5, 3 };
 int[] pointD = { 4, 1 };
 char[] pointName = { 'A', 'B', 'C', 'D' };
 
+System.Console.WriteLine();
+System.Console.WriteLine("Первый способ");
 int[,] newCords = GetNewCords(pointA, pointB, pointC, pointD, k);
 PrintCords(newCords, pointName);
 
+// Второй способ
 
+int[] MergeArray(int[] arr1, int[] arr2, int[] arr3, int[] arr4)
+{
+    // int[] unitedArr = new int[arr1.Length + arr2.Length + arr3.Length + arr4.Length]
+    int[] u1 = arr1.Concat(arr2).ToArray();
+    int[] u2 = u1.Concat(arr3).ToArray();
+    int[] unitedArr = u2.Concat(arr4).ToArray();
+    return unitedArr;
+}
 
+int[] GetScalingCords(int[] arr, int k)
+{
+    int[] newCords = new int[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < 2) newCords[i] = arr[i];
+        else if (i > 1 && i % 2 == 0) newCords[i] = arr[i] * k - arr[0] * (k - 1);
+        else if (i > 1 && i % 2 != 0) newCords[i] = arr[i] * k - arr[1] * (k - 1);
+    }
+    return newCords;
+}
+
+void PrintArray(int[] arr, char[] letters)
+{
+    int j = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i % 2 == 0) System.Console.Write($"{letters[j]}  ({arr[i]}, ");
+        else if (i % 2 != 0)
+        {
+            System.Console.WriteLine($"{arr[i]})");
+            j++;
+        }
+
+    }
+}
+
+System.Console.WriteLine();
+System.Console.WriteLine("Второй способ");
+int[] unitedCords = (MergeArray(pointA, pointB, pointC, pointD));
+int[] scallingCords = GetScalingCords(unitedCords, k);
+PrintArray(scallingCords, pointName);
 
 
 
