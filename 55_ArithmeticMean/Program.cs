@@ -21,8 +21,8 @@ void PrintMatrix(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (array[i, j] >= 10) System.Console.Write($"{array[i, j]}  ");
-            else System.Console.Write($" {array[i, j]}  ");
+            if (array[i, j] >= 10) System.Console.Write($" {array[i, j]}  ");
+            else System.Console.Write($"  {array[i, j]}  ");
         }
         System.Console.WriteLine();
     }
@@ -33,7 +33,7 @@ double[] GetArithmeticMean(int[,] array)
     double[] result = new double[array.GetLength(1)];
     for (int j = 0; j < array.GetLength(1); j++)
     {
-        int sum = 0;
+        double sum = 0;
         for (int i = 0; i < array.GetLength(0); i++)
         {
             sum += array[i, j];
@@ -45,14 +45,14 @@ double[] GetArithmeticMean(int[,] array)
 
 void PrintArray(double[] array)
 {
-    System.Console.WriteLine("-------------------");
+    System.Console.WriteLine("------------------------");
     for (int i = 0; i < array.Length; i++)
     {
-        System.Console.Write($" {array[i]}  ");
+        System.Console.Write($"{array[i]}  ");
     }
 }
 
-int row = 4;
+int row = 7;
 int col = 5;
 int min = 1;
 int max = 10;
