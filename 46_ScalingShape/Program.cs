@@ -80,12 +80,11 @@ void PrintArray(int[] arr, char[] letters)
             System.Console.WriteLine($"{arr[i]})");
             j++;
         }
-
     }
 }
 
 System.Console.WriteLine();
-System.Console.WriteLine("Второй способ");
+System.Console.WriteLine("Второй способ:");
 int[] unitedCords = (MergeArray(pointA, pointB, pointC, pointD));
 int[] scallingCords = GetScalingCords(unitedCords, k);
 PrintArray(scallingCords, pointName);

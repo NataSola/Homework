@@ -19,9 +19,9 @@ int[,] GetMatrix(int row, int col, int min, int max)
 int FindSumMainDiagonal(int[,] matr)
 {
     int sum = 0;
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {       
-        sum = sum + matr[i, i];
+    for (int i = 0; i < matr.GetLength(0); i++)     // откорректировено после семинара: убран второй цикл
+    {
+        sum = sum + matr[i, i];  
     }
     return sum;
 }
