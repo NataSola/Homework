@@ -20,11 +20,8 @@ int FindSumMainDiagonal(int[,] matr)
 {
     int sum = 0;
     for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            if (i == j) sum = sum + matr[i, j];
-        }
+    {       
+        sum = sum + matr[i, i];
     }
     return sum;
 }
