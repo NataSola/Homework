@@ -1,6 +1,5 @@
 ﻿// 58. Написать программу, которая в двумерном массиве заменяет строки на столбцы или сообщить, что это невозможно
 
-Console.Clear();
 int[,] GetMatrix(int row, int col, int min, int max)
 {
     int[,] array = new int[row, col];
@@ -14,20 +13,17 @@ int[,] GetMatrix(int row, int col, int min, int max)
     return array;
 }
 
-
-int[,] TransposeMatrix(int[,] array)
+void TransposeMatrix(int[,] array)
 {
-    int[,] transMatrix = new int[array.GetLength(1), array.GetLength(0)];
-    for (int i = 0; i < array.GetLength(1); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        int k = i;
-        for (int j = 0; j < array.GetLength(0); j++)
+        for (int j = i; j <array.GetLength(1); j++)
         {
-            int m = j;
-            transMatrix[k, m] = array[j, i];
-        }
+            int tmp = array[i,j];
+            array[i, j] = array[j, i];
+            array[j, i] = tmp;
+        }         
     }
-    return transMatrix;
 }
 
 void PrintMatrix(int[,] array)
@@ -36,19 +32,23 @@ void PrintMatrix(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            System.Console.Write(array[i, j] + " ");
+            System.Console.Write($"{array[i, j]}  ");
         }
-        System.Console.WriteLine();
+        System.Console.WriteLine("");
     }
 }
 
-int row = 5;
-int col = 7;
+int row = 4;
+int col = 4;
 int min = 10;
 int max = 100;
 
 int[,] matrix = GetMatrix(row, col, min, max);
 PrintMatrix(matrix);
 System.Console.WriteLine("---");
-int[,] transMatrix = TransposeMatrix(matrix);
-PrintMatrix(transMatrix);
+if (matrix.GetLength(0) == matrix.GetLength(1)) 
+{
+    TransposeMatrix(matrix);
+    PrintMatrix(matrix);
+}
+else System.Console.WriteLine("Данную матрицу транспонировать невозможно!" + "\n" );
