@@ -23,7 +23,7 @@ int[,] SortRowAscending(int[,] array)
             int minPosition = j;                                            
             for (int k = j + 1; k < array.GetLength(1); k++)                
             {
-                if (array[i, k] < array[i, minPosition]) minPosition = k;    
+                if (array[i, k] > array[i, minPosition]) minPosition = k;    
             }
             int tmp = array[i, j];                                          
             array[i, j] = array[i, minPosition];                            
