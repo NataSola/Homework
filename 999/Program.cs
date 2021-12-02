@@ -45,8 +45,8 @@ double[] GerScalingCords(double[] arr, double k)
     for (int i = 0; i < arr.Length; i++)
     {
         if (i < 2) newCords[i] = arr[i];
-        else if (i > 1 && i % 2 == 0) newCords[i] = arr[i] * k - arr[0] * (k-1);
-        else if (i > 1 && i % 2 != 0) newCords[i] = arr[i] * k - arr[1] * (k-1);
+        else if (i > 1 && i % 2 == 0) newCords[i] = arr[i] * k - arr[0] * (k - 1);
+        else if (i > 1 && i % 2 != 0) newCords[i] = arr[i] * k - arr[1] * (k - 1);
     }
     return newCords;
 }
@@ -61,6 +61,19 @@ System.Console.WriteLine(String.Join(' ', c3));
 System.Console.WriteLine("---");
 double[] newCords = GerScalingCords(c3, k);
 PrintArray(newCords);
+
+
+//  Проверка введенного значения
+// от Сергея
+
+while (true)
+{
+    int aaa = 0;
+    System.Console.Write("Введите число:   ");
+    bool flag = int.TryParse(Console.ReadLine(), out aaa);
+    if (flag) System.Console.WriteLine("         Это число");
+    else System.Console.WriteLine("         Это не число");
+}
 
 
 
