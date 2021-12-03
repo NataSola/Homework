@@ -13,7 +13,7 @@ int[,] GetMatrix(int row, int col, int min, int max)
     return array;
 }
 
-int rowNumber (int[,] array)
+int rowNumber(int[,] array)
 {
     int index = 0;
     int sum = 0;
@@ -23,14 +23,14 @@ int rowNumber (int[,] array)
         sum = 0;
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            sum += array [i , j];
+            sum += array[i, j];
         }
-           if (i == 0) result = sum;
-           else if (sum < result) 
-            {
-                result = sum;
-                index = i;
-            } 
+        if (i == 0) result = sum;
+        else if (sum < result)
+        {
+            result = sum;
+            index = i;
+        }
     }
     return index;
 }

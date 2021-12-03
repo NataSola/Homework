@@ -17,12 +17,12 @@ void TransposeMatrix(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = i; j <array.GetLength(1); j++)
+        for (int j = i; j < array.GetLength(1); j++)
         {
-            int tmp = array[i,j];
+            int tmp = array[i, j];
             array[i, j] = array[j, i];
             array[j, i] = tmp;
-        }         
+        }
     }
 }
 
@@ -46,9 +46,9 @@ int max = 100;
 int[,] matrix = GetMatrix(row, col, min, max);
 PrintMatrix(matrix);
 System.Console.WriteLine("---");
-if (matrix.GetLength(0) == matrix.GetLength(1)) 
+if (matrix.GetLength(0) == matrix.GetLength(1))
 {
     TransposeMatrix(matrix);
     PrintMatrix(matrix);
 }
-else System.Console.WriteLine("Данную матрицу транспонировать невозможно!" + "\n" );
+else System.Console.WriteLine("Данную матрицу транспонировать невозможно!" + "\n");
