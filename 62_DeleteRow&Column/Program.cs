@@ -26,9 +26,9 @@ void PrintArray(int[,] array)
     System.Console.WriteLine();
 }
 
-int[] GetNumsMinRawColumn(int[,] array)     // поиск минимального элемента масиива и номеров строки и столбца 
+int[] GetNumsMinRawColumn(int[,] array)     // поиск минимального элемента массива и номеров строки и столбца 
 {
-    int[] numbers = new int[2];
+    int[] numbers = new int[] { 0, 0 };
     int minNumber = array[0, 0];
     for (int i = 0; i < array.GetLength(0); i++)
     {
